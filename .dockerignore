@@ -1,0 +1,13 @@
+**
+!services/
+!services/api/
+!services/api/pyproject.toml
+!services/api/requirements-dev.lock
+!services/api/alembic.ini
+!services/api/ii_api/
+!services/api/ii_api/**
+!services/api/migrations/
+!services/api/migrations/**
+**/__pycache__/
+**/*.pyc
+**/.env*

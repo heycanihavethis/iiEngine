@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 280" fill="none">
+  <title>ii Engine cone</title>
+  <defs>
+    <linearGradient id="coneBody" x1="58" y1="8" x2="196" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD078"/>
+      <stop offset=".38" stop-color="#F39218"/>
+      <stop offset=".72" stop-color="#E06000"/>
+      <stop offset="1" stop-color="#A03A00"/>
+    </linearGradient>
+    <linearGradient id="coneSheen" x1="92" y1="20" x2="180" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".4"/>
+      <stop offset=".4" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="78" y1="68" x2="180" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9F0"/>
+      <stop offset="1" stop-color="#E6DDD2"/>
+    </linearGradient>
+    <filter id="soft" x="-22%" y="-22%" width="144%" height="144%">
+      <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <ellipse cx="128" cy="260" rx="82" ry="11" fill="#000" opacity=".24"/>
+  <path
+    d="M113 20c8-13 22-13 30 0l60 202 25 10 4.5 23c-68 15-141 15-209 0l4.5-23 25-10Z"
+    fill="url(#coneBody)"
+    stroke="#2E1A08"
+    stroke-width="9"
+    stroke-linejoin="round"
+    filter="url(#soft)"
+  />
+  <path
+    d="M113 20c8-13 22-13 30 0l60 202 25 10 4.5 23c-68 15-141 15-209 0l4.5-23 25-10Z"
+    fill="url(#coneSheen)"
+  />
+  <path d="M121 26c4.5-7 13.5-7 18 0l9 30-36 7Z" fill="#fff" opacity=".26"/>
+  <path d="M94 76l68-11 13 44-81 15Z" fill="url(#stripe)"/>
+  <path d="M66 178l122-15 9 30-132 17Z" fill="url(#stripe)"/>
+  <ellipse cx="105" cy="154" rx="9" ry="10.5" fill="#241408"/>
+  <ellipse cx="155" cy="147" rx="9" ry="10.5" fill="#241408"/>
+  <circle cx="108" cy="151" r="2.6" fill="#FFF6E8"/>
+  <circle cx="158" cy="144" r="2.6" fill="#FFF6E8"/>
+  <path d="M117 171c9 13 26 13 34-2" stroke="#241408" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <ellipse cx="90" cy="166" rx="8" ry="4.5" fill="#FF7A2A" opacity=".32"/>
+  <ellipse cx="172" cy="159" rx="8" ry="4.5" fill="#FF7A2A" opacity=".32"/>
+  <path d="M76 238h104" stroke="#FFD28C" stroke-width="7.5" stroke-linecap="round" opacity=".8"/>
+</svg>

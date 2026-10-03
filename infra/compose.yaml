@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: engine
+      POSTGRES_DB: engine
+      # Explicit localhost-only disposable development service. Never deploy this configuration.
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres-dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U engine"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  postgres-dev:

@@ -1,0 +1,39 @@
+[package]
+name = "ii-engine"
+version = "0.2.2"
+description = "ii Engine desktop launcher"
+authors = ["Drifted"]
+edition = "2021"
+license = "GPL-3.0-only"
+
+[lib]
+name = "ii_engine"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+hex = "0.4"
+base64 = "0.22"
+rand = "0.8"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+keyring = { version = "3", features = ["windows-native"] }
+open = "5"
+chrono = { version = "0.4", features = ["serde"] }
+semver = "1"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+dotnetdll = "0.3"
+sysinfo = "0.33"
+tokio = { version = "1", features = ["sync", "time"] }
+zip = { version = "4.6", default-features = false, features = ["deflate"] }
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"
+
+[dev-dependencies]
+tempfile = "3"

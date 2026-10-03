@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 280" fill="none">
+  <title>ii Engine ember cone</title>
+  <defs>
+    <linearGradient id="emberBody" x1="58" y1="8" x2="196" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A2014"/>
+      <stop offset=".45" stop-color="#1A0C08"/>
+      <stop offset="1" stop-color="#080303"/>
+    </linearGradient>
+    <linearGradient id="emberGlow" x1="88" y1="18" x2="172" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A30" stop-opacity=".6"/>
+      <stop offset=".55" stop-color="#FF4A00" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#FF3B00" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="emberSoft" x="-22%" y="-22%" width="144%" height="144%">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#FF5A00" flood-opacity=".4"/>
+    </filter>
+  </defs>
+  <ellipse cx="128" cy="260" rx="82" ry="11" fill="#FF4D00" opacity=".18"/>
+  <path
+    d="M113 20c8-13 22-13 30 0l60 202 25 10 4.5 23c-68 15-141 15-209 0l4.5-23 25-10Z"
+    fill="url(#emberBody)"
+    stroke="#FF6A1A"
+    stroke-width="8"
+    stroke-linejoin="round"
+    filter="url(#emberSoft)"
+  />
+  <path
+    d="M113 20c8-13 22-13 30 0l60 202 25 10 4.5 23c-68 15-141 15-209 0l4.5-23 25-10Z"
+    fill="url(#emberGlow)"
+  />
+  <path d="M94 76l68-11 13 44-81 15Z" fill="#2A160E"/>
+  <path d="M66 178l122-15 9 30-132 17Z" fill="#2A160E"/>
+  <ellipse cx="105" cy="154" rx="9" ry="10.5" fill="#FFA054"/>
+  <ellipse cx="155" cy="147" rx="9" ry="10.5" fill="#FFA054"/>
+  <path d="M117 171c9 13 26 13 34-2" stroke="#FF6A1A" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M76 238h104" stroke="#FF4D00" stroke-width="7.5" stroke-linecap="round" opacity=".9"/>
+</svg>

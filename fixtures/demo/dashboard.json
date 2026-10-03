@@ -1,0 +1,10 @@
+{
+  "demo": true,
+  "member": {"display_name": "Local Explorer", "membership": true, "roles": [{"id": "demo-engine-user", "name": "Engine User", "color": "#22c55e", "emoji": "✅", "icon_url": null, "position": 1}], "entitlements": ["user"]},
+  "release": {"version": "1.0.3", "channel": "stable", "signature": "Unsigned manifest", "published_at": "2026-09-08T00:00:00Z"},
+  "announcements": [
+    {"id": "demo-1", "channel": "1548782443715240017", "source": "Menu announcements", "author": "Demo maintainer", "text": "Your next session starts here. Check your installation, choose your release, and keep a backup before making changes.", "timestamp": "2026-09-13T18:30:00Z", "url": null},
+    {"id": "demo-2", "channel": "1537550313546981507", "source": "Main announcements", "author": "Demo community", "text": "Welcome to ii Engine. This isolated demo uses synthetic community data and never connects to Discord.", "timestamp": "2026-09-12T16:00:00Z", "url": null},
+    {"id": "demo-3", "channel": "1547774251963256893", "source": "Changelog/updates", "author": "Demo maintainer", "text": "Fixture release 1.0.3 — test your setup before playing. Always follow current game and server rules.", "timestamp": "2026-09-08T00:00:00Z", "url": null}
+  ]
+}

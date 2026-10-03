@@ -1,0 +1,66 @@
+:root {
+  /* Premium charcoal shell — matched to mockups (warm near-black, not mid-gray) */
+  --bg: #0e0e0e;
+  --shell: #121110;
+  --shell-elevated: #181715;
+  --panel: #1a1816;
+  --panel-soft: #1e1c19;
+  --sidebar: #181715;
+
+  --text: #f6f5f3;
+  --text-secondary: #a8a29a;
+  --muted: #7c766c;
+  --line: #ffffff12;
+  --line-strong: #ffffff18;
+
+  --accent: #ff8a1f;
+  --accent-hover: #ff9d42;
+  --accent-muted: #ff8a1f28;
+  --accent-text: #1a0f05;
+  --accent-glow: #ff8a1f40;
+  --accent-deep: #f97904;
+
+  --orange: var(--accent);
+  --burnt: #c4660c;
+  --brown: #5a4030;
+  --white: var(--text);
+  --charcoal: var(--bg);
+  --gray: #7c766c;
+  --surface: var(--panel);
+  --focus: #ffb56a;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --radius-lg: 14px;
+
+  --shell-a: #151413;
+  --shell-b: #0e0e0e;
+  --sidebar-a: #1a1816;
+  --sidebar-b: #181715;
+  --scroll-a: #5a564e;
+  --scroll-b: #3a3732;
+  --scroll-track: #0a0a0a;
+  --input-bg: #121110;
+  --input-border: #2a2724;
+  --input-text: var(--text);
+
+  --danger: #e25555;
+  --success: #3dd68c;
+  --warn: #e8b84a;
+  --discord: #5865f2;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 200ms;
+  --duration-fast: 140ms;
+  --duration-page: 240ms;
+
+  --sidebar-width: 200px;
+  --sidebar-collapsed: 76px;
+  --topbar-height: 50px;
+  --rail-width: 320px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+}

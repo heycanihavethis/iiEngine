@@ -1,0 +1,5080 @@
+{
+  "components": {
+    "schemas": {
+      "AnnouncementView": {
+        "properties": {
+          "author": {
+            "title": "Author",
+            "type": "string"
+          },
+          "author_color": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author Color"
+          },
+          "author_emoji": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author Emoji"
+          },
+          "avatar": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avatar"
+          },
+          "channel": {
+            "title": "Channel",
+            "type": "string"
+          },
+          "edited_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Edited At"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "images": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Images",
+            "type": "array"
+          },
+          "mentions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Mentions",
+            "type": "object"
+          },
+          "pinned": {
+            "default": false,
+            "title": "Pinned",
+            "type": "boolean"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url"
+          }
+        },
+        "required": [
+          "id",
+          "channel",
+          "source",
+          "author",
+          "text",
+          "timestamp",
+          "url"
+        ],
+        "title": "AnnouncementView",
+        "type": "object"
+      },
+      "AuthPoll": {
+        "properties": {
+          "verifier": {
+            "maxLength": 128,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9._~-]+$",
+            "title": "Verifier",
+            "type": "string"
+          }
+        },
+        "required": [
+          "verifier"
+        ],
+        "title": "AuthPoll",
+        "type": "object"
+      },
+      "AuthStart": {
+        "properties": {
+          "challenge": {
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Challenge",
+            "type": "string"
+          }
+        },
+        "required": [
+          "challenge"
+        ],
+        "title": "AuthStart",
+        "type": "object"
+      },
+      "AutocompleteBody": {
+        "properties": {
+          "language": {
+            "default": "csharp",
+            "maxLength": 40,
+            "title": "Language",
+            "type": "string"
+          },
+          "prefix": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Prefix",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prefix"
+        ],
+        "title": "AutocompleteBody",
+        "type": "object"
+      },
+      "CatalogExplainBody": {
+        "properties": {
+          "name": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "CatalogExplainBody",
+        "type": "object"
+      },
+      "ChatBody": {
+        "properties": {
+          "message": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "ChatBody",
+        "type": "object"
+      },
+      "CommunityAiInput": {
+        "properties": {
+          "anonymous": {
+            "default": false,
+            "title": "Anonymous",
+            "type": "boolean"
+          },
+          "category": {
+            "default": "chat",
+            "pattern": "^(chat|bug|suggestion|pro)$",
+            "title": "Category",
+            "type": "string"
+          },
+          "prompt": {
+            "maxLength": 700,
+            "minLength": 1,
+            "title": "Prompt",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "title": "CommunityAiInput",
+        "type": "object"
+      },
+      "CommunityMessageInput": {
+        "properties": {
+          "anonymous": {
+            "default": false,
+            "title": "Anonymous",
+            "type": "boolean"
+          },
+          "body": {
+            "maxLength": 800,
+            "minLength": 1,
+            "title": "Body",
+            "type": "string"
+          },
+          "category": {
+            "default": "chat",
+            "pattern": "^(chat|bug|suggestion|pro|engine)$",
+            "title": "Category",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "body"
+        ],
+        "title": "CommunityMessageInput",
+        "type": "object"
+      },
+      "ContentInput": {
+        "properties": {
+          "channel": {
+            "default": "stable",
+            "enum": [
+              "stable",
+              "beta",
+              "developer"
+            ],
+            "title": "Channel",
+            "type": "string"
+          },
+          "expected_revision": {
+            "default": 0,
+            "minimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "announcement",
+              "release",
+              "source",
+              "notice"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "manifest": {
+            "default": "",
+            "maxLength": 16000,
+            "title": "Manifest",
+            "type": "string"
+          },
+          "sha256": {
+            "default": "",
+            "maxLength": 64,
+            "title": "Sha256",
+            "type": "string"
+          },
+          "source_commit": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Source Commit",
+            "type": "string"
+          },
+          "text": {
+            "default": "",
+            "maxLength": 6000,
+            "title": "Text",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "default": "",
+            "maxLength": 2048,
+            "title": "Url",
+            "type": "string"
+          },
+          "version": {
+            "default": "",
+            "maxLength": 80,
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "title"
+        ],
+        "title": "ContentInput",
+        "type": "object"
+      },
+      "CountdownInput": {
+        "properties": {
+          "enabled": {
+            "default": false,
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "target_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target At"
+          },
+          "title": {
+            "default": "Next menu update",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "title": "CountdownInput",
+        "type": "object"
+      },
+      "CreatorApplicationInput": {
+        "properties": {
+          "experience": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "title": "Experience",
+            "type": "string"
+          },
+          "pitch": {
+            "maxLength": 2000,
+            "minLength": 20,
+            "title": "Pitch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pitch",
+          "experience"
+        ],
+        "title": "CreatorApplicationInput",
+        "type": "object"
+      },
+      "CreatorReviewInput": {
+        "properties": {
+          "approve": {
+            "title": "Approve",
+            "type": "boolean"
+          },
+          "note": {
+            "default": "",
+            "maxLength": 500,
+            "title": "Note",
+            "type": "string"
+          }
+        },
+        "required": [
+          "approve"
+        ],
+        "title": "CreatorReviewInput",
+        "type": "object"
+      },
+      "DashboardView": {
+        "properties": {
+          "announcements": {
+            "items": {
+              "$ref": "#/components/schemas/AnnouncementView"
+            },
+            "title": "Announcements",
+            "type": "array"
+          },
+          "announcements_stale": {
+            "default": false,
+            "title": "Announcements Stale",
+            "type": "boolean"
+          },
+          "demo": {
+            "title": "Demo",
+            "type": "boolean"
+          },
+          "member": {
+            "$ref": "#/components/schemas/MemberView"
+          },
+          "release": {
+            "$ref": "#/components/schemas/ReleaseView"
+          }
+        },
+        "required": [
+          "demo",
+          "member",
+          "release",
+          "announcements"
+        ],
+        "title": "DashboardView",
+        "type": "object"
+      },
+      "FeatureAccessInput": {
+        "properties": {
+          "announcements": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "app_access": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "backups": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "community_chat": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "community_mods": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "community_posts": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "creator_application": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "developer_panel": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "health_repair": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "launch_game": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "mod_library": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "plans_tab": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          },
+          "studio": {
+            "$ref": "#/components/schemas/FeatureRuleInput"
+          }
+        },
+        "title": "FeatureAccessInput",
+        "type": "object"
+      },
+      "FeatureRuleInput": {
+        "properties": {
+          "enabled": {
+            "default": true,
+            "title": "Enabled",
+            "type": "boolean"
+          },
+          "entitlements": {
+            "items": {
+              "enum": [
+                "beta",
+                "full_access",
+                "pro",
+                "developer",
+                "admin",
+                "owner"
+              ],
+              "type": "string"
+            },
+            "maxItems": 6,
+            "title": "Entitlements",
+            "type": "array"
+          },
+          "everyone": {
+            "default": false,
+            "title": "Everyone",
+            "type": "boolean"
+          },
+          "role_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 100,
+            "title": "Role Ids",
+            "type": "array"
+          }
+        },
+        "title": "FeatureRuleInput",
+        "type": "object"
+      },
+      "FeedView": {
+        "properties": {
+          "can_moderate": {
+            "default": false,
+            "title": "Can Moderate",
+            "type": "boolean"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AnnouncementView"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "pinned_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Pinned Ids",
+            "type": "array"
+          },
+          "stale": {
+            "title": "Stale",
+            "type": "boolean"
+          },
+          "unavailable": {
+            "title": "Unavailable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "items",
+          "stale",
+          "unavailable",
+          "next_cursor"
+        ],
+        "title": "FeedView",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HomeAssistBody": {
+        "properties": {
+          "message": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "title": "HomeAssistBody",
+        "type": "object"
+      },
+      "HourlyPulseBody": {
+        "description": "Compact once-per-hour presence + feature counts (keeps Discord rollups cheap).",
+        "properties": {
+          "app_version": {
+            "default": "",
+            "maxLength": 40,
+            "title": "App Version",
+            "type": "string"
+          },
+          "features": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Features",
+            "type": "object"
+          },
+          "platform": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Platform",
+            "type": "string"
+          }
+        },
+        "title": "HourlyPulseBody",
+        "type": "object"
+      },
+      "LinkInput": {
+        "properties": {
+          "username": {
+            "maxLength": 50,
+            "minLength": 1,
+            "title": "Username",
+            "type": "string"
+          }
+        },
+        "required": [
+          "username"
+        ],
+        "title": "LinkInput",
+        "type": "object"
+      },
+      "MemberView": {
+        "properties": {
+          "avatar": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Avatar"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entitlements": {
+            "items": {
+              "enum": [
+                "user",
+                "beta",
+                "full_access",
+                "pro",
+                "developer",
+                "admin",
+                "owner",
+                "ii_tracker",
+                "ii_tracker_beta"
+              ],
+              "type": "string"
+            },
+            "title": "Entitlements",
+            "type": "array"
+          },
+          "membership": {
+            "title": "Membership",
+            "type": "boolean"
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/RoleView"
+            },
+            "title": "Roles",
+            "type": "array"
+          }
+        },
+        "required": [
+          "display_name",
+          "membership",
+          "roles",
+          "entitlements"
+        ],
+        "title": "MemberView",
+        "type": "object"
+      },
+      "MenuStatusInput": {
+        "properties": {
+          "message": {
+            "maxLength": 240,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "operational",
+              "degraded",
+              "maintenance",
+              "offline"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "message"
+        ],
+        "title": "MenuStatusInput",
+        "type": "object"
+      },
+      "ModCheckBody": {
+        "properties": {
+          "filename": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Filename",
+            "type": "string"
+          },
+          "sha256": {
+            "maxLength": 64,
+            "minLength": 64,
+            "title": "Sha256",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          },
+          "strings": {
+            "maxLength": 24000,
+            "minLength": 20,
+            "title": "Strings",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename",
+          "sha256",
+          "strings"
+        ],
+        "title": "ModCheckBody",
+        "type": "object"
+      },
+      "PresenceBody": {
+        "properties": {
+          "in_room": {
+            "default": false,
+            "title": "In Room",
+            "type": "boolean"
+          },
+          "room_code": {
+            "default": "",
+            "maxLength": 32,
+            "title": "Room Code",
+            "type": "string"
+          },
+          "updated_at": {
+            "maxLength": 64,
+            "minLength": 10,
+            "title": "Updated At",
+            "type": "string"
+          },
+          "username": {
+            "default": "",
+            "maxLength": 100,
+            "title": "Username",
+            "type": "string"
+          }
+        },
+        "required": [
+          "updated_at"
+        ],
+        "title": "PresenceBody",
+        "type": "object"
+      },
+      "PresetShareBody": {
+        "properties": {
+          "preset": {
+            "additionalProperties": true,
+            "title": "Preset",
+            "type": "object"
+          }
+        },
+        "required": [
+          "preset"
+        ],
+        "title": "PresetShareBody",
+        "type": "object"
+      },
+      "PricingInput": {
+        "description": "Plans page prices editable from the developer panel.",
+        "properties": {
+          "bundle_on_sale": {
+            "default": false,
+            "title": "Bundle On Sale",
+            "type": "boolean"
+          },
+          "bundle_sale_name": {
+            "default": "",
+            "maxLength": 80,
+            "title": "Bundle Sale Name",
+            "type": "string"
+          },
+          "bundle_usd": {
+            "default": 25,
+            "maximum": 999.0,
+            "minimum": 1.0,
+            "title": "Bundle Usd",
+            "type": "integer"
+          },
+          "bundle_was_usd": {
+            "anyOf": [
+              {
+                "maximum": 999.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bundle Was Usd"
+          },
+          "lifetime_on_sale": {
+            "default": false,
+            "title": "Lifetime On Sale",
+            "type": "boolean"
+          },
+          "lifetime_sale_name": {
+            "default": "",
+            "maxLength": 80,
+            "title": "Lifetime Sale Name",
+            "type": "string"
+          },
+          "lifetime_usd": {
+            "default": 14,
+            "maximum": 999.0,
+            "minimum": 1.0,
+            "title": "Lifetime Usd",
+            "type": "integer"
+          },
+          "lifetime_was_usd": {
+            "anyOf": [
+              {
+                "maximum": 999.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lifetime Was Usd"
+          },
+          "robux_on_sale": {
+            "default": false,
+            "title": "Robux On Sale",
+            "type": "boolean"
+          },
+          "robux_price": {
+            "default": 2500,
+            "maximum": 1000000.0,
+            "minimum": 1.0,
+            "title": "Robux Price",
+            "type": "integer"
+          },
+          "robux_sale_name": {
+            "default": "",
+            "maxLength": 80,
+            "title": "Robux Sale Name",
+            "type": "string"
+          },
+          "robux_was_price": {
+            "anyOf": [
+              {
+                "maximum": 1000000.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Robux Was Price"
+          }
+        },
+        "title": "PricingInput",
+        "type": "object"
+      },
+      "PublishInput": {
+        "properties": {
+          "expected_revision": {
+            "minimum": 1.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "publish": {
+            "title": "Publish",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "expected_revision",
+          "publish"
+        ],
+        "title": "PublishInput",
+        "type": "object"
+      },
+      "PublishReleaseInput": {
+        "properties": {
+          "added": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Added",
+            "type": "array"
+          },
+          "changed": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Changed",
+            "type": "array"
+          },
+          "display_name": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Display Name",
+            "type": "string"
+          },
+          "fixes": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Fixes",
+            "type": "array"
+          },
+          "release_notes": {
+            "default": "",
+            "maxLength": 6000,
+            "title": "Release Notes",
+            "type": "string"
+          },
+          "removed": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Removed",
+            "type": "array"
+          }
+        },
+        "required": [
+          "display_name"
+        ],
+        "title": "PublishReleaseInput",
+        "type": "object"
+      },
+      "RedeemBody": {
+        "properties": {
+          "code": {
+            "maxLength": 32,
+            "minLength": 6,
+            "title": "Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "title": "RedeemBody",
+        "type": "object"
+      },
+      "RefreshBody": {
+        "properties": {
+          "refresh_token": {
+            "maxLength": 200,
+            "minLength": 40,
+            "title": "Refresh Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "refresh_token"
+        ],
+        "title": "RefreshBody",
+        "type": "object"
+      },
+      "ReleaseView": {
+        "properties": {
+          "baseline_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Id"
+          },
+          "byte_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Byte Size"
+          },
+          "canonical_filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Filename"
+          },
+          "channel": {
+            "enum": [
+              "stable",
+              "beta",
+              "developer"
+            ],
+            "title": "Channel",
+            "type": "string"
+          },
+          "download_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Download Url"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "release_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Release Url"
+          },
+          "sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sha256"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "channel",
+          "signature",
+          "published_at"
+        ],
+        "title": "ReleaseView",
+        "type": "object"
+      },
+      "RoleView": {
+        "properties": {
+          "color": {
+            "title": "Color",
+            "type": "string"
+          },
+          "emoji": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Emoji"
+          },
+          "icon_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Icon Url"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "position": {
+            "title": "Position",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "color",
+          "position"
+        ],
+        "title": "RoleView",
+        "type": "object"
+      },
+      "SessionLogBody": {
+        "properties": {
+          "app_version": {
+            "default": "",
+            "maxLength": 40,
+            "title": "App Version",
+            "type": "string"
+          },
+          "bepinex_errors": {
+            "default": "",
+            "maxLength": 200000,
+            "title": "Bepinex Errors",
+            "type": "string"
+          },
+          "features": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Features",
+            "type": "object"
+          },
+          "game_path": {
+            "default": "",
+            "maxLength": 400,
+            "title": "Game Path",
+            "type": "string"
+          },
+          "kind": {
+            "default": "launch",
+            "pattern": "^(launch|studio)$",
+            "title": "Kind",
+            "type": "string"
+          },
+          "log_text": {
+            "maxLength": 500000,
+            "minLength": 1,
+            "title": "Log Text",
+            "type": "string"
+          },
+          "platform": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Platform",
+            "type": "string"
+          }
+        },
+        "required": [
+          "log_text"
+        ],
+        "title": "SessionLogBody",
+        "type": "object"
+      },
+      "StudioActionBody": {
+        "properties": {
+          "action": {
+            "maxLength": 20,
+            "minLength": 3,
+            "title": "Action",
+            "type": "string"
+          },
+          "instruction": {
+            "default": "",
+            "maxLength": 400,
+            "title": "Instruction",
+            "type": "string"
+          },
+          "language": {
+            "default": "csharp",
+            "maxLength": 40,
+            "title": "Language",
+            "type": "string"
+          },
+          "selection": {
+            "maxLength": 6000,
+            "minLength": 1,
+            "title": "Selection",
+            "type": "string"
+          },
+          "share_telemetry": {
+            "default": false,
+            "title": "Share Telemetry",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action",
+          "selection"
+        ],
+        "title": "StudioActionBody",
+        "type": "object"
+      },
+      "Unlock": {
+        "properties": {
+          "password": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 16,
+            "title": "Password",
+            "type": "string",
+            "writeOnly": true
+          }
+        },
+        "required": [
+          "password"
+        ],
+        "title": "Unlock",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "VoteBody": {
+        "properties": {
+          "target_id": {
+            "maxLength": 36,
+            "minLength": 8,
+            "title": "Target Id",
+            "type": "string"
+          },
+          "target_type": {
+            "pattern": "^(trusted|community)$",
+            "title": "Target Type",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "target_type",
+          "target_id",
+          "value"
+        ],
+        "title": "VoteBody",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "title": "ii Engine API",
+    "version": "0.2.2"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/health/live": {
+      "get": {
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Live"
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Ready"
+      }
+    },
+    "/v1/ai/autocomplete": {
+      "post": {
+        "description": "Short code completion. Shares the daily AI budget to prevent abuse.",
+        "operationId": "autocomplete_v1_ai_autocomplete_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AutocompleteBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Autocomplete"
+      }
+    },
+    "/v1/ai/catalog-explain": {
+      "post": {
+        "description": "Pro-only informational explanation of one catalog mod (not a risk scan).",
+        "operationId": "catalog_explain_v1_ai_catalog_explain_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogExplainBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Catalog Explain"
+      }
+    },
+    "/v1/ai/chat": {
+      "post": {
+        "operationId": "chat_v1_ai_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Chat"
+      }
+    },
+    "/v1/ai/home-assistant": {
+      "post": {
+        "description": "Home-tab helper grounded on the published ii Reborn Menu feature catalog.",
+        "operationId": "home_assistant_v1_ai_home_assistant_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HomeAssistBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Home Assistant"
+      }
+    },
+    "/v1/ai/menu-catalog": {
+      "get": {
+        "description": "Full categorized ii Reborn Menu feature list for the Catalog tab.",
+        "operationId": "menu_catalog_v1_ai_menu_catalog_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Menu Catalog"
+      }
+    },
+    "/v1/ai/mod-check": {
+      "post": {
+        "description": "Analyze extracted DLL strings. Not a substitute for human review.",
+        "operationId": "mod_check_v1_ai_mod_check_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModCheckBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Mod Check"
+      }
+    },
+    "/v1/ai/studio-action": {
+      "post": {
+        "description": "Selection actions from Studio (explain / summarize / fix / change).",
+        "operationId": "studio_action_v1_ai_studio_action_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudioActionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Studio Action"
+      }
+    },
+    "/v1/announcements": {
+      "get": {
+        "operationId": "announcements_v1_announcements_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "channel",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Channel"
+            }
+          },
+          {
+            "in": "query",
+            "name": "before",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^\\d{15,20}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Before"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 50,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Announcements"
+      }
+    },
+    "/v1/announcements/{channel_id}/{message_id}": {
+      "delete": {
+        "description": "Admins / chat moderators can remove an announcement from Discord + local cache.",
+        "operationId": "delete_announcement_v1_announcements__channel_id___message_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "schema": {
+              "title": "Channel Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "message_id",
+            "required": true,
+            "schema": {
+              "title": "Message Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Announcement"
+      }
+    },
+    "/v1/announcements/{channel_id}/{message_id}/pin": {
+      "delete": {
+        "operationId": "unpin_announcement_v1_announcements__channel_id___message_id__pin_delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "schema": {
+              "title": "Channel Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "message_id",
+            "required": true,
+            "schema": {
+              "title": "Message Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Unpin Announcement"
+      },
+      "post": {
+        "description": "Admins / chat moderators can pin an announcement inside ii Engine.",
+        "operationId": "pin_announcement_v1_announcements__channel_id___message_id__pin_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channel_id",
+            "required": true,
+            "schema": {
+              "title": "Channel Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "message_id",
+            "required": true,
+            "schema": {
+              "title": "Message Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Pin Announcement"
+      }
+    },
+    "/v1/auth/disconnect": {
+      "post": {
+        "operationId": "disconnect_v1_auth_disconnect_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Disconnect"
+      }
+    },
+    "/v1/auth/discord/callback": {
+      "get": {
+        "operationId": "callback_v1_auth_discord_callback_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "State",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "code",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Code",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Error",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Callback"
+      }
+    },
+    "/v1/auth/refresh": {
+      "post": {
+        "operationId": "refresh_v1_auth_refresh_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Refresh"
+      }
+    },
+    "/v1/auth/requests": {
+      "post": {
+        "operationId": "start_v1_auth_requests_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthStart"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Start"
+      }
+    },
+    "/v1/auth/requests/{request_id}/poll": {
+      "post": {
+        "operationId": "poll_v1_auth_requests__request_id__poll_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthPoll"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Poll"
+      }
+    },
+    "/v1/auth/signout": {
+      "post": {
+        "operationId": "signout_v1_auth_signout_post",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Signout"
+      }
+    },
+    "/v1/background-tracks": {
+      "get": {
+        "operationId": "list_background_tracks_v1_background_tracks_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Background Tracks"
+      }
+    },
+    "/v1/background-tracks/{identifier}/stream": {
+      "get": {
+        "operationId": "stream_background_track_v1_background_tracks__identifier__stream_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Stream Background Track"
+      }
+    },
+    "/v1/billing/roblox/catalog": {
+      "get": {
+        "description": "Unauthenticated product card used by Plans (and health checks).",
+        "operationId": "roblox_catalog_public_v1_billing_roblox_catalog_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Roblox Catalog Public"
+      }
+    },
+    "/v1/billing/roblox/claim": {
+      "post": {
+        "operationId": "claim_roblox_catalog_item_v1_billing_roblox_claim_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Claim Roblox Catalog Item"
+      }
+    },
+    "/v1/billing/roblox/link": {
+      "post": {
+        "operationId": "link_roblox_account_v1_billing_roblox_link_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Link Roblox Account"
+      }
+    },
+    "/v1/billing/roblox/status": {
+      "get": {
+        "operationId": "roblox_billing_status_v1_billing_roblox_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Roblox Billing Status"
+      }
+    },
+    "/v1/channels": {
+      "get": {
+        "operationId": "channels_v1_channels_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Channels"
+      }
+    },
+    "/v1/community/ai": {
+      "post": {
+        "description": "Pro-only `/ai` in community chat \u2014 posts the question and an iiGPT reply.",
+        "operationId": "community_ai_command_v1_community_ai_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommunityAiInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Ai Command"
+      }
+    },
+    "/v1/community/creator-applications": {
+      "post": {
+        "operationId": "apply_creator_v1_community_creator_applications_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatorApplicationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Apply Creator"
+      }
+    },
+    "/v1/community/creator-status": {
+      "get": {
+        "operationId": "creator_status_v1_community_creator_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Creator Status"
+      }
+    },
+    "/v1/community/mentionables": {
+      "get": {
+        "description": "Recent chatters available for @mentions in community chat.",
+        "operationId": "community_mentionables_v1_community_mentionables_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Mentionables"
+      }
+    },
+    "/v1/community/messages": {
+      "get": {
+        "operationId": "community_messages_v1_community_messages_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Messages"
+      },
+      "post": {
+        "operationId": "create_community_message_v1_community_messages_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommunityMessageInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Community Message"
+      }
+    },
+    "/v1/community/messages/{identifier}": {
+      "delete": {
+        "operationId": "delete_community_message_v1_community_messages__identifier__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Community Message"
+      }
+    },
+    "/v1/community/mods": {
+      "get": {
+        "operationId": "community_mods_v1_community_mods_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Mods"
+      },
+      "post": {
+        "description": "Anyone can submit a community DLL for review. Approved mods appear in the public list.",
+        "operationId": "create_community_mod_v1_community_mods_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Description",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Community Mod"
+      }
+    },
+    "/v1/community/mods/{identifier}/ai-info": {
+      "get": {
+        "description": "Informational AI brief for an approved community mod (not a malware verdict).",
+        "operationId": "community_mod_ai_info_v1_community_mods__identifier__ai_info_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Mod Ai Info"
+      }
+    },
+    "/v1/community/mods/{identifier}/download": {
+      "get": {
+        "operationId": "download_community_mod_v1_community_mods__identifier__download_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Download Community Mod"
+      }
+    },
+    "/v1/community/mods/{identifier}/thumbnail": {
+      "get": {
+        "operationId": "community_mod_thumbnail_v1_community_mods__identifier__thumbnail_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Community Mod Thumbnail"
+      }
+    },
+    "/v1/content": {
+      "get": {
+        "operationId": "published_v1_content_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Published"
+      }
+    },
+    "/v1/dashboard": {
+      "get": {
+        "operationId": "dashboard_v1_dashboard_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Dashboard"
+      }
+    },
+    "/v1/developer/background-tracks": {
+      "get": {
+        "operationId": "developer_background_tracks_v1_developer_background_tracks_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Developer Background Tracks"
+      },
+      "post": {
+        "operationId": "upload_background_track_v1_developer_background_tracks_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "title",
+            "required": true,
+            "schema": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "artist",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 120,
+              "title": "Artist",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Upload Background Track"
+      }
+    },
+    "/v1/developer/background-tracks/{identifier}": {
+      "delete": {
+        "operationId": "delete_background_track_v1_developer_background_tracks__identifier__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Background Track"
+      }
+    },
+    "/v1/developer/community-mods": {
+      "get": {
+        "operationId": "list_developer_community_mods_v1_developer_community_mods_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Developer Community Mods"
+      }
+    },
+    "/v1/developer/community-mods/{identifier}": {
+      "delete": {
+        "operationId": "delete_community_mod_v1_developer_community_mods__identifier__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Community Mod"
+      }
+    },
+    "/v1/developer/community-mods/{identifier}/review": {
+      "post": {
+        "operationId": "review_community_mod_v1_developer_community_mods__identifier__review_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatorReviewInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Review Community Mod"
+      }
+    },
+    "/v1/developer/content": {
+      "get": {
+        "operationId": "content_v1_developer_content_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Content"
+      },
+      "post": {
+        "operationId": "create_v1_developer_content_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create"
+      }
+    },
+    "/v1/developer/content/{identifier}": {
+      "post": {
+        "operationId": "edit_v1_developer_content__identifier__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Edit"
+      }
+    },
+    "/v1/developer/content/{identifier}/visibility": {
+      "post": {
+        "operationId": "visibility_v1_developer_content__identifier__visibility_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Visibility"
+      }
+    },
+    "/v1/developer/creator-applications": {
+      "get": {
+        "operationId": "list_creator_applications_v1_developer_creator_applications_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Creator Applications"
+      }
+    },
+    "/v1/developer/creator-applications/{identifier}/review": {
+      "post": {
+        "operationId": "review_creator_application_v1_developer_creator_applications__identifier__review_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatorReviewInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Review Creator Application"
+      }
+    },
+    "/v1/developer/operations": {
+      "get": {
+        "operationId": "operations_v1_developer_operations_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Operations"
+      }
+    },
+    "/v1/developer/operations/countdown": {
+      "post": {
+        "operationId": "set_countdown_v1_developer_operations_countdown_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CountdownInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Set Countdown"
+      }
+    },
+    "/v1/developer/operations/features": {
+      "post": {
+        "operationId": "set_feature_access_v1_developer_operations_features_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeatureAccessInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Set Feature Access"
+      }
+    },
+    "/v1/developer/operations/menu": {
+      "post": {
+        "operationId": "set_menu_status_v1_developer_operations_menu_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MenuStatusInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Set Menu Status"
+      }
+    },
+    "/v1/developer/operations/pricing": {
+      "post": {
+        "operationId": "set_pricing_v1_developer_operations_pricing_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PricingInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Set Pricing"
+      }
+    },
+    "/v1/developer/releases": {
+      "post": {
+        "operationId": "stage_release_v1_developer_releases_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "version",
+            "required": true,
+            "schema": {
+              "maxLength": 80,
+              "minLength": 5,
+              "title": "Version",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Stage Release"
+      }
+    },
+    "/v1/developer/releases/{identifier}/publish": {
+      "post": {
+        "operationId": "publish_release_v1_developer_releases__identifier__publish_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PublishReleaseInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Publish Release"
+      }
+    },
+    "/v1/developer/studio-templates": {
+      "get": {
+        "operationId": "developer_studio_templates_v1_developer_studio_templates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Developer Studio Templates"
+      },
+      "post": {
+        "operationId": "upload_studio_template_v1_developer_studio_templates_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Description",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Upload Studio Template"
+      }
+    },
+    "/v1/developer/studio-templates/{identifier}": {
+      "delete": {
+        "operationId": "delete_studio_template_v1_developer_studio_templates__identifier__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Studio Template"
+      }
+    },
+    "/v1/developer/sync-stable": {
+      "post": {
+        "description": "Import the verified official stable metadata as a draft; no DLL is uploaded or run.",
+        "operationId": "sync_stable_v1_developer_sync_stable_post",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Sync Stable"
+      }
+    },
+    "/v1/developer/trusted-mods": {
+      "get": {
+        "operationId": "developer_trusted_mods_v1_developer_trusted_mods_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Developer Trusted Mods"
+      },
+      "post": {
+        "operationId": "upload_trusted_mod_v1_developer_trusted_mods_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Description",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Upload Trusted Mod"
+      }
+    },
+    "/v1/developer/trusted-mods/{identifier}": {
+      "delete": {
+        "operationId": "delete_trusted_mod_v1_developer_trusted_mods__identifier__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Trusted Mod"
+      }
+    },
+    "/v1/developer/unlock": {
+      "post": {
+        "operationId": "unlock_v1_developer_unlock_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Unlock"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Unlock"
+      }
+    },
+    "/v1/invites/mine": {
+      "get": {
+        "operationId": "my_invite_v1_invites_mine_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "My Invite"
+      },
+      "post": {
+        "description": "Create a personal one-time invite code. Engine stores it for the creator.",
+        "operationId": "create_invite_v1_invites_mine_post",
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Invite"
+      }
+    },
+    "/v1/invites/redeem": {
+      "post": {
+        "operationId": "redeem_invite_v1_invites_redeem_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RedeemBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Redeem Invite"
+      }
+    },
+    "/v1/manifests/{channel}": {
+      "get": {
+        "operationId": "manifest_v1_manifests__channel__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "schema": {
+              "title": "Channel",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Manifest"
+      }
+    },
+    "/v1/me": {
+      "delete": {
+        "description": "Erase one authenticated Engine account and its dependent records.",
+        "operationId": "delete_account_v1_me_delete",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Delete Account"
+      },
+      "get": {
+        "operationId": "me_v1_me_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Me"
+      }
+    },
+    "/v1/me/cone-kill": {
+      "post": {
+        "operationId": "cone_kill_v1_me_cone_kill_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Cone Kill"
+      }
+    },
+    "/v1/me/recheck": {
+      "post": {
+        "operationId": "recheck_v1_me_recheck_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Recheck"
+      }
+    },
+    "/v1/menu-releases": {
+      "get": {
+        "description": "Compatibility catalog for desktop: always the live GitHub latest (metadata only).",
+        "operationId": "menu_releases_v1_menu_releases_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Menu Releases"
+      }
+    },
+    "/v1/menu-releases/{identifier}/download": {
+      "get": {
+        "operationId": "download_release_v1_menu_releases__identifier__download_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ticket",
+            "required": true,
+            "schema": {
+              "maxLength": 4096,
+              "minLength": 40,
+              "title": "Ticket",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Download Release"
+      }
+    },
+    "/v1/menu-releases/{identifier}/ticket": {
+      "post": {
+        "operationId": "release_ticket_v1_menu_releases__identifier__ticket_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Release Ticket"
+      }
+    },
+    "/v1/menu/bridge/entitlements": {
+      "get": {
+        "description": "Menu-authenticated: Authorization: Bridge <ticket> \u2192 live Pro status.",
+        "operationId": "bridge_entitlements_v1_menu_bridge_entitlements_get",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "authorization",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Bridge Entitlements"
+      }
+    },
+    "/v1/menu/bridge/ticket": {
+      "post": {
+        "description": "Desktop-authenticated: mint a bridge ticket + file payload for iisStupidMenu/.",
+        "operationId": "issue_bridge_ticket_v1_menu_bridge_ticket_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Issue Bridge Ticket"
+      }
+    },
+    "/v1/mods/vote": {
+      "post": {
+        "operationId": "cast_vote_v1_mods_vote_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoteBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Cast Vote"
+      }
+    },
+    "/v1/mods/weekly-picks": {
+      "get": {
+        "description": "Top 3 mods by net score over the last 7 days (trusted + community).",
+        "operationId": "weekly_picks_v1_mods_weekly_picks_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Weekly Picks"
+      }
+    },
+    "/v1/platform/operations": {
+      "get": {
+        "operationId": "public_operations_v1_platform_operations_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Public Operations"
+      }
+    },
+    "/v1/presets": {
+      "post": {
+        "operationId": "create_preset_share_v1_presets_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresetShareBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Create Preset Share"
+      }
+    },
+    "/v1/presets/{code}": {
+      "get": {
+        "operationId": "fetch_preset_share_v1_presets__code__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "code",
+            "required": true,
+            "schema": {
+              "title": "Code",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Fetch Preset Share"
+      }
+    },
+    "/v1/releases/{channel}": {
+      "get": {
+        "operationId": "release_v1_releases__channel__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "channel",
+            "required": true,
+            "schema": {
+              "title": "Channel",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReleaseView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Release"
+      }
+    },
+    "/v1/staff": {
+      "get": {
+        "operationId": "staff_v1_staff_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Staff"
+      }
+    },
+    "/v1/studio-templates": {
+      "get": {
+        "operationId": "studio_templates_v1_studio_templates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Studio Templates"
+      }
+    },
+    "/v1/studio-templates/{identifier}/download": {
+      "get": {
+        "operationId": "download_studio_template_v1_studio_templates__identifier__download_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ticket",
+            "required": true,
+            "schema": {
+              "maxLength": 4096,
+              "minLength": 40,
+              "title": "Ticket",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Download Studio Template"
+      }
+    },
+    "/v1/studio-templates/{identifier}/ticket": {
+      "post": {
+        "operationId": "studio_template_ticket_v1_studio_templates__identifier__ticket_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Studio Template Ticket"
+      }
+    },
+    "/v1/telemetry/hourly": {
+      "post": {
+        "description": "One small presence pulse per hour while Engine is open \u2014 feeds the hourly Discord rollup.",
+        "operationId": "hourly_pulse_v1_telemetry_hourly_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HourlyPulseBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Hourly Pulse"
+      }
+    },
+    "/v1/telemetry/session-log": {
+      "post": {
+        "description": "One staff Discord dump per Engine session (readable summary + journal + errors).",
+        "operationId": "submit_session_log_v1_telemetry_session_log_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionLogBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Submit Session Log"
+      }
+    },
+    "/v1/tracker/feed": {
+      "get": {
+        "description": "Live rare-cosmetics feed for beta testers. Requires a fresh tracker session token.",
+        "operationId": "tracker_discord_feed_v1_tracker_feed_get",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Tracker-Session",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Tracker-Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Tracker Discord Feed"
+      }
+    },
+    "/v1/tracker/players": {
+      "get": {
+        "operationId": "list_players_v1_tracker_players_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "List Players"
+      }
+    },
+    "/v1/tracker/presence": {
+      "delete": {
+        "operationId": "clear_presence_v1_tracker_presence_delete",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Clear Presence"
+      },
+      "post": {
+        "operationId": "upsert_presence_v1_tracker_presence_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresenceBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Upsert Presence"
+      }
+    },
+    "/v1/tracker/session": {
+      "post": {
+        "description": "Mint a short-lived, per-user, day-bound capability token for the live feed.",
+        "operationId": "issue_tracker_session_v1_tracker_session_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Issue Tracker Session"
+      }
+    },
+    "/v1/trusted-mods": {
+      "get": {
+        "operationId": "trusted_mods_v1_trusted_mods_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Trusted Mods"
+      }
+    },
+    "/v1/trusted-mods/publish": {
+      "post": {
+        "description": "Trusted Mod Creators can publish into the Trusted catalog.",
+        "operationId": "publish_trusted_mod_v1_trusted_mods_publish_post",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "maxLength": 120,
+              "minLength": 1,
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "required": true,
+            "schema": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Description",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "schema": {
+              "maxLength": 180,
+              "minLength": 5,
+              "title": "Filename",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Publish Trusted Mod"
+      }
+    },
+    "/v1/trusted-mods/{identifier}/download": {
+      "get": {
+        "operationId": "download_trusted_mod_v1_trusted_mods__identifier__download_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "ticket",
+            "required": true,
+            "schema": {
+              "maxLength": 4096,
+              "minLength": 40,
+              "title": "Ticket",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Download Trusted Mod"
+      }
+    },
+    "/v1/trusted-mods/{identifier}/thumbnail": {
+      "get": {
+        "operationId": "trusted_mod_thumbnail_v1_trusted_mods__identifier__thumbnail_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Trusted Mod Thumbnail"
+      }
+    },
+    "/v1/trusted-mods/{identifier}/ticket": {
+      "post": {
+        "operationId": "trusted_mod_ticket_v1_trusted_mods__identifier__ticket_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "title": "Identifier",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Trusted Mod Ticket"
+      }
+    }
+  }
+}

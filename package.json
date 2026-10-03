@@ -1,0 +1,27 @@
+{
+  "name": "ii-engine",
+  "version": "0.2.2",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "contracts:types": "openapi-typescript packages/contracts/openapi.json -o packages/contracts/api.d.ts && prettier --write packages/contracts/api.d.ts",
+    "lint": "eslint apps/desktop/src apps/desktop/vite.config.ts packages/contracts",
+    "format": "prettier --write \"apps/desktop/src/**/*.{ts,tsx,css}\" \"packages/contracts/**/*.ts\"",
+    "format:check": "prettier --check \"apps/desktop/src/**/*.{ts,tsx,css}\" \"packages/contracts/**/*.ts\"",
+    "dev": "pnpm --filter @ii/desktop dev",
+    "build": "pnpm --filter @ii/desktop build",
+    "test": "pnpm --filter @ii/desktop test",
+    "typecheck": "pnpm --filter @ii/desktop typecheck",
+    "desktop": "pnpm --filter @ii/desktop tauri dev",
+    "package": "pnpm --filter @ii/desktop tauri build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
+    "openapi-typescript": "^7.13.0",
+    "prettier": "^3.9.6",
+    "typescript-eslint": "^8.70.0"
+  }
+}

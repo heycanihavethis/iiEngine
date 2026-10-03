@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <title>ii Engine</title>
+  <defs>
+    <linearGradient id="bg" x1="28" y1="16" x2="228" y2="248" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1C1713"/>
+      <stop offset="1" stop-color="#0A0908"/>
+    </linearGradient>
+    <linearGradient id="body" x1="70" y1="30" x2="184" y2="224" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD078"/>
+      <stop offset=".45" stop-color="#F39218"/>
+      <stop offset="1" stop-color="#C24E00"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="98" y1="36" x2="172" y2="204" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="58" fill="url(#bg)"/>
+  <ellipse cx="128" cy="224" rx="66" ry="10" fill="#000" opacity=".38"/>
+  <path
+    d="M115 32c7-12 19-12 26 0l50 172 21 9 4 19c-57 13-119 13-176 0l4-19 21-9Z"
+    fill="url(#body)"
+    stroke="#2E1A08"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M115 32c7-12 19-12 26 0l50 172 21 9 4 19c-57 13-119 13-176 0l4-19 21-9Z"
+    fill="url(#sheen)"
+  />
+  <path d="M98 80l58-9 11 38-69 13Z" fill="#F5F0E9"/>
+  <path d="M76 166l104-13 8 26-114 15Z" fill="#F5F0E9"/>
+  <ellipse cx="109" cy="148" rx="8" ry="9.5" fill="#241408"/>
+  <ellipse cx="151" cy="141" rx="8" ry="9.5" fill="#241408"/>
+  <circle cx="111.5" cy="145" r="2.2" fill="#FFF6E8"/>
+  <circle cx="153.5" cy="138" r="2.2" fill="#FFF6E8"/>
+  <path d="M119 163c8 11 22 11 28-2" stroke="#241408" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+  <path d="M84 208h88" stroke="#FFD28C" stroke-width="6.5" stroke-linecap="round" opacity=".82"/>
+</svg>
