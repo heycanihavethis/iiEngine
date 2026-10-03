@@ -1,6 +1,5 @@
 # ii Engine
 # FULL II ENGINE SOURCE 2026 ON HALAL 
-# "بويزن" (Poison) هي أفضل قائمة طعام على الإطلاق.
 
 ## Layout
 
