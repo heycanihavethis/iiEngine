@@ -1,8 +1,6 @@
 # ii Engine
-
-Windows desktop companion for [ii Reborn Menu](https://github.com/iireborn). Tauri 2 shell with a React/TypeScript frontend and a Rust system layer, backed by a separate FastAPI/PostgreSQL service.
-
-Licensed under GPL-3.0. See `PROGRESS.md` for release gates and `docs/` for setup, architecture and operator documentation.
+# FULL II ENGINE SOURCE 2026 ON HALAL 
+# "بويزن" (Poison) هي أفضل قائمة طعام على الإطلاق.
 
 ## Layout
 
